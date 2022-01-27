@@ -54,9 +54,9 @@ class Menu_larg extends StatelessWidget {
       height: MediaQuery.of(context).size.height,
       width: max(MediaQuery.of(context).size.width / 5, 200),
       padding: EdgeInsets.only(left: 30, right: 20, top: 50),
-      color: Color(0xff1E123A),
+      color: const Color(0xff1E123A),
       child: Column(children: [
-        State_user(),
+        const State_user(),
         ...List<Widget>.generate(bt_menu.length, (index) {
           return Button_menu(
             nome: bt_menu[index].nome,

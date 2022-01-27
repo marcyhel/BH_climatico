@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/adapters.dart';
+import 'package:plat2/mobx/login/mob_login.dart';
 import 'package:plat2/mobx/models/salvar.dart';
 
 import 'package:plat2/screens/Clima/clima.dart';
+
 import 'package:plat2/screens/home/home.dart';
+import 'package:plat2/screens/login/login.dart';
 import 'package:plat2/screens/principal.dart';
 import 'package:plat2/screens/resultados/resultados.dart';
 import 'package:plat2/screens/tabela/tabela.dart';
@@ -21,6 +24,7 @@ void main() async {
 }
 
 void singletonsApp(box) {
+  GetIt.I.registerSingleton(Mob_login());
   GetIt.I.registerSingleton(Mob_Dados(box));
 }
 
@@ -46,7 +50,8 @@ class MyApp extends StatelessWidget {
       ),
       initialRoute: '',
       routes: {
-        '': (context) => const Home_page(),
+        '': (context) => const Login(),
+        '/home': (context) => const Home_page(),
         '/clima': (context) => const Clima_page(),
         '/tabela': (context) => TabelaDados(),
         '/resultado': (context) => const Resultados(),

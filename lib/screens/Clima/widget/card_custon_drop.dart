@@ -71,8 +71,8 @@ class Card_cuaton_Drop extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width / 3.13,
       margin: ResponsiveWidget.isSmallScreen(context)
-          ? EdgeInsets.only(left: 0, bottom: 20)
-          : EdgeInsets.only(left: 40, bottom: 20),
+          ? const EdgeInsets.only(left: 0, bottom: 20)
+          : const EdgeInsets.only(left: 40, bottom: 20),
       padding: const EdgeInsets.all(10),
       decoration: BoxDecoration(
         color: Colors.white,
@@ -98,8 +98,8 @@ class Card_cuaton_Drop extends StatelessWidget {
               hintText: mob.estado == "" ? " UF " : mob.estado,
               borderRadius: 10,
               maxListHeight: 150,
-              borderColor: Color(0xff1E123A),
-              expandedColor: Color(0xff1E123A),
+              borderColor: const Color(0xff1E123A),
+              expandedColor: const Color(0xff1E123A),
               onChanged: (e) {
                 mob.setEstado(UF[e - 1]);
                 print(mob.estado);
