@@ -24,16 +24,76 @@ mixin _$Mob_login on _Mob_loginBase, Store {
               name: '_Mob_loginBase.senhaValida'))
           .value;
 
+  final _$nomeAtom = Atom(name: '_Mob_loginBase.nome');
+
+  @override
+  String get nome {
+    _$nomeAtom.reportRead();
+    return super.nome;
+  }
+
+  @override
+  set nome(String value) {
+    _$nomeAtom.reportWrite(value, super.nome, () {
+      super.nome = value;
+    });
+  }
+
+  final _$cpfAtom = Atom(name: '_Mob_loginBase.cpf');
+
+  @override
+  String get cpf {
+    _$cpfAtom.reportRead();
+    return super.cpf;
+  }
+
+  @override
+  set cpf(String value) {
+    _$cpfAtom.reportWrite(value, super.cpf, () {
+      super.cpf = value;
+    });
+  }
+
+  final _$numeroAtom = Atom(name: '_Mob_loginBase.numero');
+
+  @override
+  String get numero {
+    _$numeroAtom.reportRead();
+    return super.numero;
+  }
+
+  @override
+  set numero(String value) {
+    _$numeroAtom.reportWrite(value, super.numero, () {
+      super.numero = value;
+    });
+  }
+
+  final _$status_errorAtom = Atom(name: '_Mob_loginBase.status_error');
+
+  @override
+  bool get status_error {
+    _$status_errorAtom.reportRead();
+    return super.status_error;
+  }
+
+  @override
+  set status_error(bool value) {
+    _$status_errorAtom.reportWrite(value, super.status_error, () {
+      super.status_error = value;
+    });
+  }
+
   final _$emailAtom = Atom(name: '_Mob_loginBase.email');
 
   @override
-  String? get email {
+  String get email {
     _$emailAtom.reportRead();
     return super.email;
   }
 
   @override
-  set email(String? value) {
+  set email(String value) {
     _$emailAtom.reportWrite(value, super.email, () {
       super.email = value;
     });
@@ -57,13 +117,13 @@ mixin _$Mob_login on _Mob_loginBase, Store {
   final _$passAtom = Atom(name: '_Mob_loginBase.pass');
 
   @override
-  String? get pass {
+  String get pass {
     _$passAtom.reportRead();
     return super.pass;
   }
 
   @override
-  set pass(String? value) {
+  set pass(String value) {
     _$passAtom.reportWrite(value, super.pass, () {
       super.pass = value;
     });
@@ -117,7 +177,7 @@ mixin _$Mob_login on _Mob_loginBase, Store {
   final _$LoginPressAsyncAction = AsyncAction('_Mob_loginBase.LoginPress');
 
   @override
-  Future<void> LoginPress() {
+  Future<bool> LoginPress() {
     return _$LoginPressAsyncAction.run(() => super.LoginPress());
   }
 
@@ -147,8 +207,23 @@ mixin _$Mob_login on _Mob_loginBase, Store {
   }
 
   @override
+  dynamic setLogado(dynamic valor) {
+    final _$actionInfo = _$_Mob_loginBaseActionController.startAction(
+        name: '_Mob_loginBase.setLogado');
+    try {
+      return super.setLogado(valor);
+    } finally {
+      _$_Mob_loginBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
+nome: ${nome},
+cpf: ${cpf},
+numero: ${numero},
+status_error: ${status_error},
 email: ${email},
 bool_email: ${bool_email},
 pass: ${pass},

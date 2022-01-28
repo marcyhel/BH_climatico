@@ -5,10 +5,18 @@ import 'package:plat2/mobx/login/mob_login.dart';
 import 'package:plat2/mobx/mob_dados.dart';
 import 'package:plat2/screens/login/widgets/button_login.dart';
 import 'package:plat2/screens/login/widgets/imput_login.dart';
+import 'package:plat2/screens/login/widgets/warning.dart';
 
-class Larg_login extends StatelessWidget {
+class Larg_login extends StatefulWidget {
   Larg_login({Key? key}) : super(key: key);
+
+  @override
+  State<Larg_login> createState() => _Larg_loginState();
+}
+
+class _Larg_loginState extends State<Larg_login> {
   final Mob_login mob = GetIt.I<Mob_login>();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -34,6 +42,7 @@ class Larg_login extends StatelessWidget {
             child: Observer(builder: (_) {
               return Column(
                 children: [
+                  mob.status_error ? Warning() : Container(),
                   CustonTextField_login(
                     valor: 'Ex. maria@email.com',
                     label: 'E-mail',
@@ -52,7 +61,16 @@ class Larg_login extends StatelessWidget {
                   ),
                   const Divider(),
                   Button__login(
-                      nome: "Login", func: mob.LoginPress, load: mob.load),
+                      nome: "Login",
+                      func: () async {
+                        await mob.LoginPress()
+                            ? {
+                                Navigator.pushNamed(context, '/clima'),
+                                mob.logado = true
+                              }
+                            : null;
+                      },
+                      load: mob.load),
                 ],
               );
             }),

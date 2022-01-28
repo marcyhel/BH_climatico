@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:plat2/mobx/login/mob_login.dart';
+import 'package:plat2/mobx/login/salvar.dart';
 import 'package:plat2/mobx/models/salvar.dart';
 
 import 'package:plat2/screens/Clima/clima.dart';
@@ -19,12 +20,13 @@ void main() async {
   var box = await Hive.openBox('caixacultura');
 
   singletonsApp(box);
+  await carrega_login();
   await carrega_dados();
   runApp(const MyApp());
 }
 
 void singletonsApp(box) {
-  GetIt.I.registerSingleton(Mob_login());
+  GetIt.I.registerSingleton(Mob_login(box));
   GetIt.I.registerSingleton(Mob_Dados(box));
 }
 

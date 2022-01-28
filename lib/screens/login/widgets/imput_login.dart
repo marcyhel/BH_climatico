@@ -37,13 +37,12 @@ class _CustonTextFieldState extends State<CustonTextField_login> {
             //initialValue: (widget.valor == '0.0') ? "" : widget.valor,
             onChanged: (e) {
               widget.func(e);
-              print("aqi ${e}");
             },
             decoration: InputDecoration(
               hintText: widget.valor,
               //errorStyle:
               //  const TextStyle(color: Colors.red), // fontSize: 0.001),
-              errorText: widget.erro,
+              errorText: widget.erro == '' ? null : widget.erro,
               isDense: true,
               focusedBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Color(0xff1E123A), width: 1.0),

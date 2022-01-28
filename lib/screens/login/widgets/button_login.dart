@@ -46,8 +46,10 @@ class _Button_menuState extends State<Button__login> {
           hover(false);
         },
         child: GestureDetector(
-            onTap: () {
-              widget.func();
+            onTap: () async {
+              if (!widget.load) {
+                widget.func();
+              }
             },
             child: AnimatedContainer(
               height: 50,
