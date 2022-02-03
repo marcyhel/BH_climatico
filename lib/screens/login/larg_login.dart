@@ -6,6 +6,7 @@ import 'package:plat2/mobx/mob_dados.dart';
 import 'package:plat2/screens/login/widgets/button_login.dart';
 import 'package:plat2/screens/login/widgets/imput_login.dart';
 import 'package:plat2/screens/login/widgets/warning.dart';
+import 'package:plat2/screens/widgets/responsive.dart';
 
 class Larg_login extends StatefulWidget {
   Larg_login({Key? key}) : super(key: key);
@@ -24,9 +25,11 @@ class _Larg_loginState extends State<Larg_login> {
       body: Center(
         child: SingleChildScrollView(
           child: Container(
-            width: MediaQuery.of(context).size.width / 3 < 400
-                ? 400
-                : MediaQuery.of(context).size.width / 3,
+            width: ResponsiveWidget.isSmallScreen(context)
+                ? MediaQuery.of(context).size.width / 1.1
+                : MediaQuery.of(context).size.width / 3 < 400
+                    ? 400
+                    : MediaQuery.of(context).size.width / 3,
             //height: 200,
             padding:
                 const EdgeInsets.only(bottom: 20, left: 20, right: 20, top: 10),

@@ -9,8 +9,6 @@ class Home_page extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ResponsiveWidget.isSmallScreen(context)
-        ? const Small_home()
-        : const Larg_home();
+    return ResponsiveWidget.isSmallScreen(context) ? Small_home() : Larg_home();
   }
 }

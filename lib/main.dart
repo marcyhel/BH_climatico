@@ -53,10 +53,10 @@ class MyApp extends StatelessWidget {
       initialRoute: '',
       routes: {
         '': (context) => const Login(),
-        '/home': (context) => const Home_page(),
-        '/clima': (context) => const Clima_page(),
+        '/home': (context) => Home_page(),
+        '/clima': (context) => Clima_page(),
         '/tabela': (context) => TabelaDados(),
-        '/resultado': (context) => const Resultados(),
+        '/resultado': (context) => Resultados(),
       },
     );
   }

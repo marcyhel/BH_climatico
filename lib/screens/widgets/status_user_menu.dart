@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:plat2/mobx/login/mob_login.dart';
 
 class State_user extends StatelessWidget {
-  const State_user({Key? key}) : super(key: key);
-
+  State_user({Key? key}) : super(key: key);
+  final Mob_login mob_login = GetIt.I<Mob_login>();
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -11,10 +13,10 @@ class State_user extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Row(
-            children: const [
+            children: [
               Flexible(
                 child: Text(
-                  "Marcyhel menezes",
+                  mob_login.nome,
                   style: TextStyle(fontSize: 23, color: Colors.white),
                   overflow: TextOverflow.ellipsis,
                 ),

@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get_it/get_it.dart';
+import 'package:plat2/mobx/login/mob_login.dart';
+import 'package:plat2/screens/aviso_login/aviso_login.dart';
 import 'package:plat2/screens/widgets/drawer/drawer.dart';
 
 class Small_home extends StatelessWidget {
-  const Small_home({Key? key}) : super(key: key);
-
+  Small_home({Key? key}) : super(key: key);
+  final Mob_login mob_login = GetIt.I<Mob_login>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +17,7 @@ class Small_home extends StatelessWidget {
       drawer: Custon_Drawer(
         select: 0,
       ),
-      body: Container(),
+      body: !mob_login.logado ? Aviso() : Container(),
     );
   }
 }

@@ -27,7 +27,7 @@ class Menu_larg extends StatelessWidget {
       Bt_menu(
           nome: 'Home page',
           func: () {
-            Navigator.pushNamed(context, '');
+            Navigator.pushNamed(context, '/home');
           },
           selec: false),
       Bt_menu(
@@ -56,7 +56,7 @@ class Menu_larg extends StatelessWidget {
       padding: EdgeInsets.only(left: 30, right: 20, top: 50),
       color: const Color(0xff1E123A),
       child: Column(children: [
-        const State_user(),
+        State_user(),
         ...List<Widget>.generate(bt_menu.length, (index) {
           return Button_menu(
             nome: bt_menu[index].nome,

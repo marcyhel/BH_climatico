@@ -18,7 +18,7 @@ class Custon_Drawer extends StatelessWidget {
       Bt_menu(
           nome: 'Home page',
           func: () {
-            Navigator.pushNamed(context, '');
+            Navigator.pushNamed(context, '/home');
           },
           selec: false),
       Bt_menu(
