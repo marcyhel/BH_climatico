@@ -37,13 +37,18 @@ class Larg_home extends StatelessWidget {
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height / 4,
                     ),
-                    Row(
-                      children: [
-                        Card_home(),
-                        Card_home(),
-                        Card_home(),
-                        Card_home()
-                      ],
+                    Container(
+                      width: MediaQuery.of(context).size.width,
+                      height: MediaQuery.of(context).size.height / 3,
+                      child: ListView(
+                        scrollDirection: Axis.horizontal,
+                        children: const [
+                          Card_home(),
+                          Card_home(),
+                          Card_home(),
+                          Card_home()
+                        ],
+                      ),
                     )
                   ],
                 ),
