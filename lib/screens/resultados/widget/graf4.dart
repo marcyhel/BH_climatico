@@ -14,7 +14,8 @@ class Graf4 extends StatelessWidget {
         primaryXAxis: CategoryAxis(title: AxisTitle(text: 'Tempo')),
         primaryYAxis: NumericAxis(title: AxisTitle(text: 'mm')),
         // Chart title
-        title: ChartTitle(text: 'Balanço Hídrico'),
+        title: ChartTitle(
+            text: 'Deficiência, Excedente, Retirada e Reposição Hídrica'),
         // Enable legend
         legend: Legend(
             isVisible: true,

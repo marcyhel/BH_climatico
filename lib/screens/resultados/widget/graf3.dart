@@ -14,7 +14,9 @@ class Graf3 extends StatelessWidget {
         primaryXAxis: CategoryAxis(title: AxisTitle(text: 'Tempo')),
         primaryYAxis: NumericAxis(title: AxisTitle(text: 'mm')),
         // Chart title
-        title: ChartTitle(text: 'Balanço Hídrico'),
+        title: ChartTitle(
+            text:
+                'Capacidade de Armazenamento (CAD),\nArmazenamento (ARM) mensal'),
         // Enable legend
         legend: Legend(
             isVisible: true,

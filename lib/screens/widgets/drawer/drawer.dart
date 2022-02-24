@@ -17,24 +17,40 @@ class Custon_Drawer extends StatelessWidget {
     List<Bt_menu> bt_menu = [
       Bt_menu(
           nome: 'Home page',
+          ico: const Icon(
+            Icons.home_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/home');
           },
           selec: false),
       Bt_menu(
           nome: 'Dados',
+          ico: const Icon(
+            Icons.data_usage_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/clima');
           },
           selec: false),
       Bt_menu(
           nome: 'Planilha',
+          ico: const Icon(
+            Icons.table_view_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/tabela');
           },
           selec: false),
       Bt_menu(
           nome: 'Resultados',
+          ico: const Icon(
+            Icons.stacked_line_chart_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/resultado');
           },
@@ -54,6 +70,7 @@ class Custon_Drawer extends StatelessWidget {
               nome: bt_menu[index].nome,
               func: bt_menu[index].func,
               selec: bt_menu[index].selec,
+              ico: bt_menu[index].ico,
             );
           }),
         ],

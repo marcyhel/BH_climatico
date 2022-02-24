@@ -21,6 +21,10 @@ class _Larg_loginState extends State<Larg_login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+          backgroundColor: Color(0xff4E436E),
+          child: Image.asset("assets/icon.png"),
+          onPressed: null),
       backgroundColor: const Color(0xff1E123A),
       body: Center(
         child: SingleChildScrollView(

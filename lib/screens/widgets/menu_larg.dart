@@ -1,16 +1,19 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+
 import 'package:plat2/screens/widgets/status_user_menu.dart';
 
 class Bt_menu {
   bool selec;
   String nome;
   Function func;
+  Icon ico;
   Bt_menu({
     required this.selec,
     required this.nome,
     required this.func,
+    required this.ico,
   });
 }
 
@@ -26,24 +29,40 @@ class Menu_larg extends StatelessWidget {
     List<Bt_menu> bt_menu = [
       Bt_menu(
           nome: 'Home page',
+          ico: const Icon(
+            Icons.home_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/home');
           },
           selec: false),
       Bt_menu(
           nome: 'Dados',
+          ico: const Icon(
+            Icons.data_usage_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/clima');
           },
           selec: false),
       Bt_menu(
           nome: 'Planilha',
+          ico: const Icon(
+            Icons.table_view_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/tabela');
           },
           selec: false),
       Bt_menu(
           nome: 'Resultados',
+          ico: const Icon(
+            Icons.stacked_line_chart_rounded,
+            color: Colors.white,
+          ),
           func: () {
             Navigator.pushNamed(context, '/resultado');
           },
@@ -62,6 +81,7 @@ class Menu_larg extends StatelessWidget {
             nome: bt_menu[index].nome,
             func: index == select ? () {} : bt_menu[index].func,
             selec: bt_menu[index].selec,
+            ico: bt_menu[index].ico,
           );
         }),
       ]),
@@ -73,12 +93,14 @@ class Button_menu extends StatefulWidget {
   bool selec;
   String nome;
   Function func;
+  Icon ico;
   bool isHover = false;
   Button_menu({
     Key? key,
     required this.selec,
     required this.nome,
     required this.func,
+    required this.ico,
   }) : super(key: key);
 
   @override
@@ -120,9 +142,20 @@ class _Button_menuState extends State<Button_menu> {
                   height: 50,
                   width: double.infinity,
                   child: Center(
-                    child: Text(
-                      widget.nome,
-                      style: TextStyle(color: Colors.white),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 5,
+                          child: widget.ico,
+                        ),
+                        Expanded(
+                          flex: 7,
+                          child: Text(
+                            widget.nome,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   decoration: BoxDecoration(
@@ -144,9 +177,20 @@ class _Button_menuState extends State<Button_menu> {
                     color: corbase,
                   ),
                   child: Center(
-                    child: Text(
-                      widget.nome,
-                      style: TextStyle(color: Colors.white),
+                    child: Row(
+                      children: [
+                        Expanded(
+                          flex: 5,
+                          child: widget.ico,
+                        ),
+                        Expanded(
+                          flex: 7,
+                          child: Text(
+                            widget.nome,
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                 ),

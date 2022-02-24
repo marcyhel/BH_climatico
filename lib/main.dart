@@ -13,6 +13,7 @@ import 'package:plat2/screens/principal.dart';
 import 'package:plat2/screens/resultados/resultados.dart';
 import 'package:plat2/screens/tabela/tabela.dart';
 
+import 'mobx/media_home/mob_media_home.dart';
 import 'mobx/mob_dados.dart';
 
 void main() async {
@@ -28,6 +29,7 @@ void main() async {
 void singletonsApp(box) {
   GetIt.I.registerSingleton(Mob_login(box));
   GetIt.I.registerSingleton(Mob_Dados(box));
+  GetIt.I.registerSingleton(Mob_media_home());
 }
 
 class MyApp extends StatelessWidget {
@@ -37,6 +39,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.

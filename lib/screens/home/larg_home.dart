@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 import 'package:plat2/mobx/login/mob_login.dart';
+import 'package:plat2/mobx/media_home/mob_media_home.dart';
 import 'package:plat2/screens/aviso_login/aviso_login.dart';
 import 'package:plat2/screens/home/widget/card_home.dart';
+import 'package:plat2/screens/home/widget/graf_media.dart';
 import 'package:plat2/screens/principal.dart';
 
 class Larg_home extends StatelessWidget {
   Larg_home({Key? key}) : super(key: key);
   final Mob_login mob_login = GetIt.I<Mob_login>();
+  final Mob_media_home mob_media = GetIt.I<Mob_media_home>();
   @override
   Widget build(BuildContext context) {
     return Principal(
@@ -38,18 +41,27 @@ class Larg_home extends StatelessWidget {
                       height: MediaQuery.of(context).size.height / 4,
                     ),
                     Container(
+                      // color: Colors.amber,
+                      margin: EdgeInsets.only(
+                        top: MediaQuery.of(context).size.height / 6.8,
+                      ),
                       width: MediaQuery.of(context).size.width,
-                      height: MediaQuery.of(context).size.height / 3,
+                      height: 230,
                       child: ListView(
+                        shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
-                        children: const [
-                          Card_home(),
-                          Card_home(),
-                          Card_home(),
-                          Card_home()
+                        children: [
+                          Card_home(img: "assets/1.png"),
+                          Card_home(img: "assets/tb1.png"),
+                          Card_home(img: "assets/2.png"),
                         ],
                       ),
-                    )
+                    ),
+                    Positioned(
+                        bottom: 0, right: 0, left: 0, child: Graf_Media()),
+                    Container(
+                      height: MediaQuery.of(context).size.height,
+                    ),
                   ],
                 ),
               ),

@@ -1,29 +1,40 @@
 import 'package:flutter/material.dart';
 
 class Card_home extends StatelessWidget {
-  const Card_home({Key? key}) : super(key: key);
+  String img;
+  Card_home({
+    Key? key,
+    required this.img,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 200,
-      width: MediaQuery.of(context).size.width / 7,
       margin: EdgeInsets.only(
         left: MediaQuery.of(context).size.width / 20,
-        top: MediaQuery.of(context).size.height / 6.8,
+        bottom: 10,
+        top: 10,
       ),
-      decoration: BoxDecoration(
-        color: Colors.white,
-        borderRadius: BorderRadius.circular(20),
-        boxShadow: const [
-          BoxShadow(
-            offset: Offset(1, 2),
-            blurRadius: 5,
-            color: Colors.black38,
+      child: Center(
+          child: Container(
+        height: 200,
+        width: 200,
+        decoration: BoxDecoration(
+          //color: Colors.white,
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: AssetImage(img),
+            fit: BoxFit.fill,
           ),
-        ],
-      ),
-      child: Text("data"),
+          boxShadow: const [
+            BoxShadow(
+              offset: Offset(1, 2),
+              blurRadius: 5,
+              color: Colors.black38,
+            ),
+          ],
+        ),
+      )),
     );
   }
 }
