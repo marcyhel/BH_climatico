@@ -39,6 +39,16 @@ class Larg_home extends StatelessWidget {
                       //color: Color(0xff4E436E),
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height / 4,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 40, left: 60),
+                        child: const Text(
+                          "BHCN",
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontWeight: FontWeight.bold,
+                              fontSize: 35),
+                        ),
+                      ),
                     ),
                     Container(
                       // color: Colors.amber,

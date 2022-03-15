@@ -14,6 +14,11 @@ class Small_home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        title: const Text(
+          "BHCN",
+          style: TextStyle(
+              color: Colors.white, fontWeight: FontWeight.bold, fontSize: 25),
+        ),
         backgroundColor: Color(0xff1E123A),
         elevation: 0,
       ),
@@ -36,14 +41,17 @@ class Small_home extends StatelessWidget {
                       //color: Color(0xff4E436E),
                       width: double.infinity,
                       height: MediaQuery.of(context).size.height / 7,
+                      child: Container(
+                        margin: EdgeInsets.only(top: 10, left: 20),
+                      ),
                     ),
                     Container(
                       // color: Colors.amber,
                       margin: EdgeInsets.only(
-                        top: MediaQuery.of(context).size.height / 10.8,
+                        top: MediaQuery.of(context).size.height / 25.8,
                       ),
                       width: MediaQuery.of(context).size.width,
-                      height: 230,
+                      height: 250,
                       child: ListView(
                         shrinkWrap: true,
                         scrollDirection: Axis.horizontal,
@@ -55,7 +63,11 @@ class Small_home extends StatelessWidget {
                       ),
                     ),
                     Positioned(
-                        bottom: 0, right: 0, left: 0, child: Graf_Media()),
+                        top: 200,
+                        bottom: 0,
+                        right: 0,
+                        left: 0,
+                        child: Graf_Media()),
                     Container(
                       height: MediaQuery.of(context).size.height,
                     ),

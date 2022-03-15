@@ -3,7 +3,7 @@
     <uses-permission android:name="android.permission.INTERNET"/> <!-- Add this -->
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
    <application
-        android:label="plat2"
+        android:label="BHCN-Software para cálculo do Balanço Hídrico em Assentamentos"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

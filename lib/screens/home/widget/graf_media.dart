@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 import 'package:plat2/mobx/media_home/mob_media_home.dart';
+import 'package:plat2/screens/widgets/responsive.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
 
 class Graf_Media extends StatelessWidget {
@@ -21,7 +22,8 @@ class Graf_Media extends StatelessWidget {
                   child: const Center(
                     child: CircularProgressIndicator(
                       strokeWidth: 6,
-                      color: Color(0xff1E123A),
+                      color: Color(0xffDB215A),
+                      //0xffFC8608
                     ),
                   ),
                 )
@@ -29,10 +31,16 @@ class Graf_Media extends StatelessWidget {
                   //color: Colors.red,
                   height: MediaQuery.of(context).size.height / 2.5,
                   width: MediaQuery.of(context).size.width / 4,
-                  margin: const EdgeInsets.only(bottom: 50),
+                  margin: ResponsiveWidget.isSmallScreen(context)
+                      ? EdgeInsets.only(
+                          bottom: 30,
+                        )
+                      : EdgeInsets.only(bottom: 50),
                   child: Center(
                     child: Container(
-                      width: MediaQuery.of(context).size.width / 1.3,
+                      width: ResponsiveWidget.isSmallScreen(context)
+                          ? MediaQuery.of(context).size.width / 1.02
+                          : MediaQuery.of(context).size.width / 1.3,
                       height: MediaQuery.of(context).size.height / 3,
                       decoration: BoxDecoration(
                         color: Colors.white,
@@ -78,7 +86,18 @@ class Graf_Media extends StatelessWidget {
                             },
                             name: 'Temperatura',
                             // width: 5,
-                            color: Color(0xff4E436E),
+                            //color: Color(0xff4E436E),
+
+                            gradient: const LinearGradient(
+                              begin: Alignment.topLeft,
+                              end: Alignment
+                                  .bottomRight, // 10% of the width, so there are ten blinds.
+                              colors: <Color>[
+                                Color(0xffFC8608),
+                                Color(0xffDB215A)
+                              ],
+                            ),
+
                             dataLabelSettings:
                                 DataLabelSettings(isVisible: false),
                           ),

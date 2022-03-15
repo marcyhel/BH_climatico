@@ -58,7 +58,7 @@ class _Larg_loginState extends State<Larg_login> {
                     },
                     erro: mob.emailErro,
                   ),
-                  CustonTextField_login(
+                  CustonTextField_login_pass(
                     valor: '',
                     label: 'Senha',
                     func: (e) {
@@ -72,7 +72,7 @@ class _Larg_loginState extends State<Larg_login> {
                       func: () async {
                         await mob.LoginPress()
                             ? {
-                                Navigator.pushNamed(context, '/clima'),
+                                Navigator.pushNamed(context, '/home'),
                                 mob.logado = true
                               }
                             : null;
